@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-commerce</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/a2e0e6ad5b.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <nav>
+      <h1>Minha Loja</h1>
+      <div>
+        <button id="cartBtn"><i class="fas fa-shopping-cart"></i> Carrinho (<span id="cartCount">0</span>)</button>
+        <button id="loginBtn"><i class="fas fa-user"></i> Entrar</button>
+        <a href="cadastro.html"><button id="registerBtn">Cadastrar-se</button></a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Barra de busca -->
+  <section>
+    <input type="text" id="searchInput" placeholder="Buscar produtos...">
+    <select id="priceFilter">
+      <option value="">Preço</option>
+      <option value="0-1000">Até R$ 1.000</option>
+      <option value="1000-2000">R$ 1.000 - 2.000</option>
+      <option value="2000+">Acima de R$ 2.000</option>
+    </select>
+    <select id="sortFilter">
+      <option value="name">Nome</option>
+      <option value="price-low">Menor preço</option>
+      <option value="price-high">Maior preço</option>
+    </select>
+    <button id="clearFilters">Limpar filtros</button>
+  </section>
+
+  <!-- Grid de produtos -->
+  <main>
+    <div id="productsGrid" class="grid"></div>
+  </main>
+
+  <!-- Carrinho lateral -->
+  <aside id="cartSidebar" class="translate-x-full">
+    <h2>Seu Carrinho</h2>
+    <div id="cartItems"></div>
+    <p>Total: <span id="cartTotal">R$ 0,00</span></p>
+    <button id="checkoutBtn">Finalizar Compra</button>
+    <button id="closeCart">Fechar</button>
+  </aside>
+  <div id="cartOverlay" class="hidden"></div>
+
+  <!-- Login Modal -->
+  <div id="loginModal" class="hidden">
+    <form id="loginForm">
+      <h2>Entrar</h2>
+      <input type="email" name="email" placeholder="E-mail" required>
+      <input type="password" name="password" placeholder="Senha" required>
+      <button type="submit">Entrar</button>
+      <button type="button" id="closeLogin">Cancelar</button>
+    </form>
+  </div>
+
+  <!-- Checkout Modal -->
+  <div id="checkoutModal" class="hidden">
+    <h2>Finalizar Pedido</h2>
+    <div id="checkoutItems"></div>
+    <p>Total: <span id="checkoutTotal"></span></p>
+    <button id="confirmPayment">Confirmar Pagamento</button>
+    <button id="closeCheckout">Cancelar</button>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
+
